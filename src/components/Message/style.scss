@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.message {
+  margin-bottom: vars.$gutter;
+  font-weight: bold;
+  font-size: 1.3rem;
+}

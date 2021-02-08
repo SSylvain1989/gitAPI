@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.header {
+  text-align: center;
+  padding-bottom: vars.$gutter;
+  img {
+    max-width: 200px;
+  }
+}
