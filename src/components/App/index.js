@@ -9,6 +9,8 @@ import Message from 'src/components/Message';
 import ReposResults from 'src/components/ReposResults';
 import Spinner from 'src/components/Spinner';
 import MoreResults from 'src/components/MoreResults';
+import Footer from 'src/components/Footer';
+
 
 // == Import
 import './styles.scss';
@@ -101,6 +103,7 @@ const App = () => {
       {results.length > 0 && results.length !== count && (
         <MoreResults onClick={() => setPage(page + 1)} />
       )}
+      <Footer />
     </div>
   );
 };
