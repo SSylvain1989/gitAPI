@@ -21,6 +21,7 @@ const simplifyItems = (items) => items.map((item) => ({
   title: item.full_name,
   imageUrl: item.owner.avatar_url,
   login: item.owner.login,
+  url: item.clone_url,
   // pour avoir une description par défaut
   // on vient l'insérer directment ici avec un OU logique
   description: item.description || 'pas de description',
@@ -57,6 +58,7 @@ const App = () => {
     // axios.get(`https://api.github.com/search/repositories?q=${query}`)
     axios.get(`https://api.github.com/search/repositories?q=${query}&sort=stars&order=desc&page=${page}&per_page=9`)
       .then((response) => {
+        console.log(response);
         const simplifiedItems = simplifyItems(response.data.items);
         // on vient cumuler les résultats d'avant avec ceux qu'on a déjà dans le state
         const agregatedItems = [
@@ -66,7 +68,7 @@ const App = () => {
 
         setResults(agregatedItems);
         setCount(response.data.total_count);
-        setMessage(`votre recherche a donné ${response.data.total_count} résultats`);
+        setMessage(`${response.data.total_count} results`);
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));

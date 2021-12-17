@@ -6,7 +6,7 @@ import './style.scss';
 
 const MoreResult = ({ onClick }) => (
   <Segment>
-    <Button fluid onClick={onClick}>Voir plus de résultats</Button>
+    <Button fluid onClick={onClick}>More results</Button>
   </Segment>
 );
 
